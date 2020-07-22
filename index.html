@@ -2,19 +2,29 @@
 <html lang="en">
   <head>
     <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script
-      async
-      src="https://www.googletagmanager.com/gtag/js?id=UA-173229913-1"
-    ></script>
-    <script>
-      window.dataLayer = window.dataLayer || []
-      function gtag() {
-        dataLayer.push(arguments)
-      }
-      gtag('js', new Date())
-
-      gtag('config', 'UA-173229913-1')
-    </script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-173229913-1"></script>
+<script>
+	window.dataLayer = window.dataLayer || [];
+	function gtag(){
+		dataLayer.push(arguments);
+	}
+	gtag('js', new Date());
+	gtag('config', 'UA-173229913-1', {'send_page_view': false});
+</script>
+<script>
+	function initRingostat(){
+		if (typeof(ga) !== 'undefined') {
+			ga('gtag_UA_173229913_1.require','ringostat');
+			gtag('event', 'page_view');
+			(function (d,s,u,e,p) {
+				p=d.getElementsByTagName(s)[0],e=d.createElement(s),e.async=1,e.src=u,p.parentNode.insertBefore(e, p);
+			})(document, 'script', 'https://script.ringostat.com/v4/56/561552be9a3eab6ec9f35bbc6d7b3ed0dbc6eb75.js');
+		} else {
+			setTimeout(initRingostat,200);
+		}
+	}
+	initRingostat();
+</script>
 
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
